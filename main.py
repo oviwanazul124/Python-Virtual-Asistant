@@ -78,17 +78,24 @@ def answer(data):
             data = data.replace(" ", "")
             data = "https://www." + data 
 
+
+            # Esto se encarga de controlar los errores que puede llegar a tener el comando, los errores soportados son únicamente un error predeterminado del navegador.
+
             engine.say("Se ha abierto" + data)
             try:
                 webbrowser.open(data)
             except webbrowser.Error:
                 engine.say("Hubo un error con el navegador, intentelo más tarde")
+        
+        # Por otro lado este el código que se encarga del soporte de abrir aplicaciones.
 
         else:
             listening = True
             data = data.replace("Open", "")
             data = data.replace(" ", "")
             
+            # Esta parte del código se encarga de controlar los errores producidos por este comando 
+
             try:
                 call([data + ".exe"])
             except FileNotFoundError:
