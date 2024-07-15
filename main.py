@@ -36,14 +36,27 @@ def recognize_speech(recognizer, microphone):
         print("Could not understand what you said")
     return speech
 
+# En esta sección del codigo la variable data, guarda la información propuesta por el usuario, mediante esto podremos saber que tipo de comando pide el usuario.
+
 def answer(data):
+
+    # El primer comando es un comando Hello, se podría denominar a estas alturas del desarrollo como un comando para comprobar si funciona.
+
     if "Hello" in data:
         listening = True
         engine.say("Hola, mi nombre es")
 
+    # El segundo comando es una busqueda en Wikipedia de algún personaje.
+
     elif "Wikipedia" in data:
         listening = True
+        
+        # Esta linea remplaza todos los espacios que puedan a llegar a provocar problemas por "", facilitando la comprensión del programa.
+        
         data = data.replace("Wikipedia", "")
+        
+        # En esta función prueba la conexión a Wikipedia, actualmente tiene configurados dos errores comúnes, el primer el cuál es un HTPPTtimeout y que la página no exista
+        
         try:
             result = wikipedia.summary(data, sentences = 4)
             engine.say("Según wikipedia")
@@ -52,6 +65,9 @@ def answer(data):
             engine.say("No existe esa pagina en Wikipedia")
         except wikipedia.exceptions.HTTPTimeoutError:
             engine.say("Hubo un error conectandose a Wikipedia")   
+
+    # En este otro comando, se encarga de abrir páginas / aplicaciones, si dentro de 'data' existe un ".com", correra el código de abrir páginas si no correra la app.
+    #TODO: Debe de existir algúna manera de abrir apps, sin que nos sepamos el proceso 
 
     elif "Open" in data:
 
@@ -86,6 +102,9 @@ def answer(data):
         engine.say("Creo que no lo he entendido, ¿Puedes repetir?")
 
     return listening
+
+# En esta sección del codigo, si la variable de escucha se encuentra activa printeara: "Say somenthing:" posteriormente reconocera lo dicho y lo guardara en una variable llamada
+# data esta se usa posteriormente para poder visualizar cuales de los comandos disponibles han sidos dichos por el usuario.
 
 while listening == True:
     print("Say something: ")
