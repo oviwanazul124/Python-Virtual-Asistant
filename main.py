@@ -2,15 +2,15 @@ import speech_recognition as sr
 import pyttsx3
 import wikipedia
 import webbrowser
-from subprocess import call
-
+import subprocess
+from config import *
 
 # Inicializar el engine para el Text-Speech y el acceso a la API de Wikipedia
 
 engine = pyttsx3.init()
 engine.setProperty('rate', 150)
 engine.setProperty('volume', 0.9)
-wikipedia.set_lang("es")
+wikipedia.set_lang(MainLanguage)
 
 # La variable 'listening', se utiliza a lo largo del programa para indicar si el ordenador esta escuchando o no esta escuchando
 
@@ -64,7 +64,9 @@ def answer(data):
         except wikipedia.exceptions.PageError:
             engine.say("No existe esa pagina en Wikipedia")
         except wikipedia.exceptions.HTTPTimeoutError:
-            engine.say("Hubo un error conectandose a Wikipedia")   
+            engine.say("Hubo un error conectandose a Wikipedia")
+        except wikipedia.exceptions.DisambiguationError:
+            engine.say("Existen demasiadas páginas con el mismo nombre, porfavor especifica")
 
     # En este otro comando, se encarga de abrir páginas / aplicaciones, si dentro de 'data' existe un ".com", correra el código de abrir páginas si no correra la app.
     #TODO: Debe de existir algúna manera de abrir apps, sin que nos sepamos el proceso 
@@ -97,7 +99,7 @@ def answer(data):
             # Esta parte del código se encarga de controlar los errores producidos por este comando 
 
             try:
-                call([data + ".exe"])
+                subprocess.run("start " + data + ".exe", shell=True)
             except FileNotFoundError:
                 engine.say("No se ha encontrado la aplicación especificada")
    

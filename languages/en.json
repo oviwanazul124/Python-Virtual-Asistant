@@ -1,0 +1,14 @@
+ {
+    "sr.RequestError": "There is no speech recognition model installed.",
+    "sr.UnknownValueError": "I couldn't understand what you said.",
+    "command.Hello": "Hello, my name is Jhon Doe.",
+    "command.Wikipedia": "According to Wikipedia.",
+    "wikipedia.exceptions.PageError": "There is no such page on Wikipedia.",
+    "wikipedia.exceptions.HTTPTimeoutError": "There was an error connecting to Wikipedia.",
+    "wikipedia.exceptions.DisambiguationError": "There are too many pages with the same name, please specify it.",
+    "command.open.web": "It has been opened",
+    "webbrowser.error": "There was an error with the browser, try again later.",
+    "command.open.app": "",
+    "FileNotFoundError": "Specified application not found",
+    "listeningError": "I don't think I understood, can you repeat?"
+}

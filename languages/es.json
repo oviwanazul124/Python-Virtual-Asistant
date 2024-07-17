@@ -1,0 +1,14 @@
+ {
+    "sr.RequestError": "No existe un modelo de reconocimiento de voz instalado.",
+    "sr.UnknownValueError": "No he podido entener lo que has dicho.",
+    "command.Hello": "Hola, mi nombre es Jhon Doe.",
+    "command.Wikipedia": "Según Wikipedia",
+    "wikipedia.exceptions.PageError": "No existe esa pagina en Wikipedia.",
+    "wikipedia.exceptions.HTTPTimeoutError": "Hubo un error conectandose a Wikipedia.",
+    "wikipedia.exceptions.DisambiguationError": "Existen demasiadas páginas con el mismo nombre, porfavor especificalo.",
+    "command.open.web": "Se ha abierto",
+    "webbrowser.error": "Hubo un error con el navegador, intentelo más tarde.",
+    "command.open.app": "",
+    "FileNotFoundError": "No se ha encontrado la aplicación especificada.",
+    "listeningError": "Creo que no lo he entendido, ¿Puedes repetir?."
+}
