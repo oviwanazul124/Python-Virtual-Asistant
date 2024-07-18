@@ -10,5 +10,6 @@
     "webbrowser.error": "Hubo un error con el navegador, intentelo más tarde.",
     "command.open.app": "",
     "FileNotFoundError": "No se ha encontrado la aplicación especificada.",
-    "listeningError": "Creo que no lo he entendido, ¿Puedes repetir?."
+    "listeningError": "Creo que no lo he entendido, ¿Puedes repetir?.",
+    "command.shutdown": "The system has been shut down"
 }

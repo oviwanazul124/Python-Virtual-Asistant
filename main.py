@@ -10,7 +10,7 @@ from config import *
 engine = pyttsx3.init()
 engine.setProperty('rate', 150)
 engine.setProperty('volume', 0.9)
-wikipedia.set_lang(MainLanguage)
+wikipedia.set_lang(mainLanguage)
 
 # La variable 'listening', se utiliza a lo largo del programa para indicar si el ordenador esta escuchando o no esta escuchando
 
@@ -69,7 +69,6 @@ def answer(data):
             engine.say("Existen demasiadas páginas con el mismo nombre, porfavor especifica")
 
     # En este otro comando, se encarga de abrir páginas / aplicaciones, si dentro de 'data' existe un ".com", correra el código de abrir páginas si no correra la app.
-    #TODO: Debe de existir algúna manera de abrir apps, sin que nos sepamos el proceso 
 
     elif "Open" in data:
 
@@ -103,8 +102,27 @@ def answer(data):
             except FileNotFoundError:
                 engine.say("No se ha encontrado la aplicación especificada")
    
+
+    # Este comando se encarga de cerrar la aplicación, y cerrar todos los script relacionados a ellos.
+
     elif "Exit" in data:
         exit()
+
+    # Este comando se encarga de cerrar el sistema sin aviso de apagado de las aplicaciones.
+
+    elif "Shutdown" in data:
+        engine.say ("Se ha apagado el sistema")
+        subprocess.run("shutdown /p /f")
+        pass
+
+
+    # Este comando se encarga de obtener la hora del día y del sistema y decirsela al usuario.
+    #! Este sección del código no esta terminada, es solo un placeholder
+
+    elif "time" in data:
+        pass
+
+    # Este comando es usado para si no se reconoce ningúno de los siguientes comandos
 
     else:
         listening = True
