@@ -3,6 +3,7 @@ import pyttsx3
 import wikipedia
 import webbrowser
 import subprocess
+import time
 from config import *
 
 # Inicializar el engine para el Text-Speech y el acceso a la API de Wikipedia
@@ -44,7 +45,7 @@ def answer(data):
 
     if "Hello" in data:
         listening = True
-        engine.say("Hola, mi nombre es")
+        engine.say("Hola, mi nombre es Artemis")
 
     # El segundo comando es una busqueda en Wikipedia de algún personaje.
 
@@ -119,8 +120,11 @@ def answer(data):
     # Este comando se encarga de obtener la hora del día y del sistema y decirsela al usuario.
     #! Este sección del código no esta terminada, es solo un placeholder
 
-    elif "time" in data:
-        pass
+    elif "Time" in data:
+        
+        t = time.time()
+        localtime = time.strftime('%Y-%m-%d %H:%M %Z', time.localtime(t))
+        engine.say("La hora actual es " + localtime)
 
     # Este comando es usado para si no se reconoce ningúno de los siguientes comandos
 
@@ -138,4 +142,3 @@ while listening == True:
     data = recognize_speech(recognizer,microphone)
     listening = answer(data)
     engine.runAndWait()
-
