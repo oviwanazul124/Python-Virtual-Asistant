@@ -1,15 +1,40 @@
- {
-    "sr.RequestError": "No existe un modelo de reconocimiento de voz instalado.",
-    "sr.UnknownValueError": "No he podido entener lo que has dicho.",
-    "command.Hello": "Hola, mi nombre es Jhon Doe.",
-    "command.Wikipedia": "Según Wikipedia",
-    "wikipedia.exceptions.PageError": "No existe esa pagina en Wikipedia.",
-    "wikipedia.exceptions.HTTPTimeoutError": "Hubo un error conectandose a Wikipedia.",
-    "wikipedia.exceptions.DisambiguationError": "Existen demasiadas páginas con el mismo nombre, porfavor especificalo.",
-    "command.open.web": "Se ha abierto",
-    "webbrowser.error": "Hubo un error con el navegador, intentelo más tarde.",
-    "command.open.app": "",
-    "FileNotFoundError": "No se ha encontrado la aplicación especificada.",
-    "listeningError": "Creo que no lo he entendido, ¿Puedes repetir?.",
-    "command.shutdown": "The system has been shut down"
+{
+    "command": {
+
+        "hello": "Hola, mi nombre es artemis",
+        "wikipedia": {
+                "starting": "Segun Wikpedia",
+                "pageError": "No existe esa página en wikipedia",
+                "HTTPTimeoutError": "Hubo un error conectandose a Wikipedia, intentelo más tarde",
+                "disambiguationError": "Existen multipes páginas con ese nombre, porfavor sea más preciso" 
+        },
+        "open": {
+                "web": {
+                    "starting": "Se ha abierto",
+                    "error": "Hubo un error con el navegador, intentelo de nuevo más tarde"
+
+                },
+                "app": {
+                    "starting": "",
+                    "fileNotFoundError": "No se ha encontrado la aplicación especificada."
+                }
+        },
+        "shutdown": {
+                "starting": "El sistema se ha apagado",
+                "error": "Hubo un error desconocido apagando el sistema"
+        }
+
+    },
+
+    "sr": {
+        "requestError": "No existe un modelo de reconocimiento de voz instalado en el sistema porfavor instale uno",
+        "unknownValueError": "No he podido entener lo que has dicho, ¿Podrías repetirlo?",
+        "listeningError": "No he podido entener lo que has dicho, ¿Podrías repetirlo?",
+        "said": "Has dicho...",
+        "listening": "Di algo..."
+    },
+
+    "config": {
+        "readError": "Hubo un error leyendo el archivo de configuración compruebe que se encuentra correcto"
+    }
 }

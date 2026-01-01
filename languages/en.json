@@ -1,15 +1,40 @@
- {
-    "sr.RequestError": "There is no speech recognition model installed.",
-    "sr.UnknownValueError": "I couldn't understand what you said.",
-    "command.Hello": "Hello, my name is Jhon Doe.",
-    "command.Wikipedia": "According to Wikipedia.",
-    "wikipedia.exceptions.PageError": "There is no such page on Wikipedia.",
-    "wikipedia.exceptions.HTTPTimeoutError": "There was an error connecting to Wikipedia.",
-    "wikipedia.exceptions.DisambiguationError": "There are too many pages with the same name, please specify it.",
-    "command.open.web": "It has been opened",
-    "webbrowser.error": "There was an error with the browser, try again later.",
-    "command.open.app": "",
-    "FileNotFoundError": "Specified application not found",
-    "listeningError": "I don't think I understood, can you repeat?",
-    "command.shutdown": "The system has been shut down"
+{
+    "command": {
+
+        "hello": "Hello, my name is Artemis",
+        "wikipedia": {
+                "starting": "What I found on Wikipedia was",
+                "pageError": "That page of Wikipedia dosen't exists",
+                "HTTPTimeoutError": "There was an error trying to connect to Wikipedia, please try again",
+                "disambiguationError": "There are multiples pages with the samen name, please be more specific" 
+        },
+        "open": {
+                "web": {
+                    "starting": "has been open",
+                    "error": "There was an error opening the webrowser, please try again"
+
+                },
+                "app": {
+                    "starting": "",
+                    "fileNotFoundError": "I can't find the app you have said"
+                }
+        },
+        "shutdown": {
+                "starting": "The system is going to shutdown",
+                "error": "There was an error shuting down the system, please try again"
+        }
+
+    },
+
+    "sr": {
+        "requestError": "There isn't a recognition speech model installed, please to use this app install one",
+        "unknownValueError": "I didn't understand what you said, could you repeat it?",
+        "listeningError": "I didn't understand what you said, could you repeat it?",
+        "said": "You said...",
+        "listening": "Say something..."
+    },
+
+    "config": {
+        "readError": "There was an error reading the config file, please check it is correct"
+    }
 }

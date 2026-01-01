@@ -1,22 +1,32 @@
-# Asistente Virtual de código abierto
+# Python Virtual Assistant
 
-Este es una asistente virtual de código abierto, aunque en las pruebas se ha utilizado el modelo de traducción y reconocimiento de voz WhisperAI de OpenAI, las librerías usadas permiten el cambio a otros servicios como los proporcionados por Microsoft como Azure, o Google.
+This is a simple virtual assistant, that will help you to do some basics task via voice commands using WhisperAI recognition model
 
-# Funciones desarrolladas hasta la fecha
+## Features
+Right now the assistant is able to do:
 
-Actualmente los siguientes comandos se encuentrán soportados:
+- Open Webs: Domains like google, youtube or others
 
-- Soporte para abrir páginas o webs mediante el comando: "Open" (Si se pretende abrir una página se debe decir la URL completa como ejemplo: 'google.com' si funcionaría pero 'google' sería considera una app).
-- Soporte de busqueda y lectura de páginas de wikipedia de manera casi inmediata mediante el comando: "Wikipedia".
+- Open App: Right now opens app like calc.exe or others [This feature is only developed for Windows, also dosen't have any type of filtrer of what apps is executing]
 
-# Información del código fuente
+- Shutdown: Turns off your device, dosen't ask for confirmations [I'm working to add a confirmation]
 
-Para más información del código fuente dirigirse al archivo 'codigo.txt', para obtener más información de las librerías y del código.
+- Wikipedia Search: The assistant is able to read from wikipedia and talk about it
 
-# Funciones que se desarrollaran
+- Support for two languages:
+	- Spanish 
+	 - English
 
-Se preteden alcanzar los siguientes objetivos:
+- You can easily add your own commands. For more information refer to the [documentation]()
 
-- Soporte de la voz para varios idiomas
-- Una interfaz grafica para aquellos usuarios que no se encuentran acostumbrados a terminales
-- Soporte para más comandos, como la hora, el tiempo entre otros.
+## Installations instructions
+
+This will be updated when the first release is reached, right now only the source code is published.
+
+## Usage
+
+This also will be updated when the first release is reached, right now only the source code is published.
+
+## Configuration
+
+You can easily add more languages by adding it to the languages folder or modify some basics configurations in the config.ini. For more information refers to the [documentation]()
