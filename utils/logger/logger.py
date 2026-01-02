@@ -11,7 +11,7 @@ def getLogsDir() -> Path:
 
 def logCreate() -> Path:
 
-    time = datetime.now().strftime("Y-%m-%d_%H-%M-%S")
+    time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     logFile = getLogsDir() / f"{time}.log"
     with logFile.open("w", encoding="utf-8") as file:
         file.write(f"{time} has log created succesfully")
@@ -19,7 +19,7 @@ def logCreate() -> Path:
 
 
 logger = logging.getLogger(__name__)
-logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',filename=f"{logCreate()}", encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',filename=f"{logCreate()}", encoding='utf-8', level=logging.INFO)
 
 def loggingF(type, string):
 

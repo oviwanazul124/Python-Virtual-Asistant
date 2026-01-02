@@ -1,11 +1,19 @@
+# Imports
+
 import platform
 import subprocess
 from utils.jsonImporting.jsonimport import readJSON
 from utils.logger.logger import loggingF
 
+# Import translations
+
 translations = readJSON()
 
+# Check what platform the user is executing
+
 rOS = platform.system()
+
+# Main Function
 
 def cShutdown():
 
@@ -18,4 +26,6 @@ def cShutdown():
         case "Darwin":
             subprocess.run("shutdown now")
         case _:
+
+            loggingF(4 , "Shutdown command has encountered an error")
             return translations["command"]["shutdown"]["error"]        
