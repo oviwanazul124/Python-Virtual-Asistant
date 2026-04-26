@@ -13,6 +13,9 @@ def projectRoot() -> Path:
 
 def getLogsDir() -> Path:
     logsDir = projectRoot() / "logs"
+
+    logsDir.mkdir(exist_ok=True, parents=True)
+
     return logsDir
 
 # Function to create the log file
@@ -22,7 +25,7 @@ def logCreate() -> Path:
     time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     logFile = getLogsDir() / f"{time}.log"
     with logFile.open("w", encoding="utf-8") as file:
-        file.write(f"{time} has log created succesfully")
+        file.write(f"{time} has log created succesfully \n")
     return logFile
 
 # Initiate the logging fuction
