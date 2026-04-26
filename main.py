@@ -1,8 +1,11 @@
+# Import for the main code
+
 import speech_recognition as sr
 from utils.jsonImporting.jsonimport import readJSON
 from utils.speechRecognition.speechRecognition import recognize_speech
 from utils.answers.answers import answers
 from utils.textToSpeech.textToSpeech import runAndWait
+
 # Get Translations
 
 translations = readJSON()

@@ -1,13 +1,21 @@
+# Imports
+
 import logging
 from pathlib import Path
 from datetime import datetime
 
+# Function to acces the project root path
+
 def projectRoot() -> Path:
     return Path(__file__).resolve().parents[2]
+
+# Function to access the directory to save the logs
 
 def getLogsDir() -> Path:
     logsDir = projectRoot() / "logs"
     return logsDir
+
+# Function to create the log file
 
 def logCreate() -> Path:
 
@@ -17,9 +25,12 @@ def logCreate() -> Path:
         file.write(f"{time} has log created succesfully")
     return logFile
 
+# Initiate the logging fuction
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(message)s',filename=f"{logCreate()}", encoding='utf-8', level=logging.INFO)
+
+# Function to log around all the utils
 
 def loggingF(type, string):
 

@@ -2,12 +2,17 @@
 
 from utils.jsonImporting.jsonimport import readJSON
 from utils.logger.logger import loggingF
+from utils.config.configR import configGet
 
 # Main function
 
-tranlsations = readJSON()
+translations = readJSON()
 
-def cHello():
-
-    loggingF(2, "Hello command has been executed")
-    return tranlsations["command"]["hello"]
+def HelloCommand():
+        
+    if configGet("hello", "enabled") == "True":
+        loggingF(2, "Hello command has been executed")
+        return translations["command"]["hello"]
+    else:
+        loggingF(2, "The function hello is disabled")
+        return translations["command"]["disabled"]

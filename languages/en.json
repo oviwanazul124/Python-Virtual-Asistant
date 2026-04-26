@@ -1,6 +1,7 @@
 {
     "command": {
 
+        "disabled": "This function has been disabled via the config.ini",
         "hello": "Hello, my name is Artemis",
         "wikipedia": {
                 "starting": "What I found on Wikipedia was",

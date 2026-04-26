@@ -1,6 +1,7 @@
 {
     "command": {
 
+        "disabled": "Esta función fue deshabilitada en el config.ini",
         "hello": "Hola, mi nombre es artemis",
         "wikipedia": {
                 "starting": "Segun Wikpedia",

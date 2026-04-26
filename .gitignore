@@ -161,3 +161,15 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 __pycache__/config.cpython-312.pyc
+
+# Own test zone
+
+playground/
+
+# Logs
+
+logs/
+
+# VS Code Settings
+
+.vscode/
